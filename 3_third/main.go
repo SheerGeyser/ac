@@ -27,18 +27,23 @@ func Part1(lines []string) int {
 	return sum
 }
 
-func FindRepeatOneLine(first string, second string) int {
-	for _, i := range first {
-		for _, j := range second {
-			if i == j {
-				if i > 96 {
-					return int(i - 96)
-				} else {
-					return int(i - 38)
+func FindRepeatOneLine(a string, b string, c ...string) int {
+	if c == nil {
+		for _, i := range a {
+			for _, j := range b {
+				if i == j {
+					if i > 96 {
+						return int(i - 96)
+					} else {
+						return int(i - 38)
+					}
 				}
 			}
 		}
+	} else if c != nil {
+
 	}
+
 	return 0
 }
 
